@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use App\Http\Requests\Request;
 use Illuminate\Foundation\Http\FormRequest;
 
-class GenreRequest extends FormRequest
+class UserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,8 +26,7 @@ class GenreRequest extends FormRequest
     public function rules()
     {
         return [
-            'type' => 'required',
-            'note' => 'required|min:5|max:255'
+            // 'name' => 'required|min:5|max:255'
         ];
     }
 
@@ -51,8 +50,7 @@ class GenreRequest extends FormRequest
     public function messages()
     {
         return [
-            'type.required' => 'The type field is required.',
-            'note.required' => 'Please provide valid notes which is between 5 and 255 characters.'
+            //
         ];
     }
 }

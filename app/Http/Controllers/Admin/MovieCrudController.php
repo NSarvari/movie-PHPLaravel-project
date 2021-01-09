@@ -53,7 +53,7 @@ class MovieCrudController extends CrudController
 // optional
                 'entity'    => 'producers', // the method that defines the relationship in your Model
                 'model'     => "App\Models\Producer", // foreign key model
-                'attribute' => 'firstName', // foreign key attribute that is shown to user
+                'attribute' => 'lastName', // foreign key attribute that is shown to user
                 'pivot'     => true, // on create&update, do you need to add/delete pivot table entries?
             ],
             [

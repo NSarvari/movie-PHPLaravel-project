@@ -26,7 +26,9 @@ class MovieRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'name' => 'required|min:5|max:50',
+            'language' => 'required|min:5|max:50',
+            'genres' => 'required'
         ];
     }
 
@@ -50,7 +52,9 @@ class MovieRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            'name.required' => 'Please provide valid name which is between 5 and 50 characters.',
+            'language.required' => 'Please provide valid language which is between 5 and 50 characters.',
+            'genres.required' => 'The genres field is required.'
         ];
     }
 }

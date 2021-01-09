@@ -91,6 +91,11 @@ class Movie extends Model
     {
         return $this->belongsToMany(Genre::class, 'movie_genres','movie_id', 'genre_id');
     }
+
+    public function producers()
+    {
+        return $this->belongsToMany(Producer::class, 'movie_producer','movie_id', 'producer_id');
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES

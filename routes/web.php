@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GenreController;
+use App\Http\Controllers\ProducerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/genres',[GenreController::class,'getall']);
+Route::get('genres/{id}', [GenreController::class,'getById']);
+
+Route::get('/producers',[ProducerController::class,'getall']);
+Route::get('producers/{id}', [ProducerController::class,'getById']);

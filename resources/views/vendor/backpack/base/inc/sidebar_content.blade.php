@@ -4,3 +4,5 @@
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('movie') }}'><i class='nav-icon la la-question'></i> Movies</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('producer') }}'><i class='nav-icon la la-question'></i> Producers</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('user') }}'><i class='nav-icon la la-question'></i> Users</a></li>
+<!-- <li class='nav-item'><a class='nav-link' href='{{ backpack_url('movie_genre') }}'><i class='nav-icon la la-question'></i> Movie_genres</a></li> -->
+<!-- <li class='nav-item'><a class='nav-link' href='{{ backpack_url('movie_producer') }}'><i class='nav-icon la la-question'></i> Movie_producers</a></li> -->

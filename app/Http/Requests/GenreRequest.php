@@ -26,7 +26,8 @@ class GenreRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'type' => 'required|unique:genres',
+            'note' => 'required|min:5|max:255'
         ];
     }
 
@@ -50,7 +51,9 @@ class GenreRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            'type.required' => 'You should provide valid unique type.',
+            'type.unique' => 'The type that you have provided has already been added.',
+            'note.required' => 'Please provide valid notes which is between 5 and 255 characters.'
         ];
     }
 }

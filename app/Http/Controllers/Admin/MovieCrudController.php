@@ -46,6 +46,16 @@ class MovieCrudController extends CrudController
                 'attribute' => 'type', // foreign key attribute that is shown to user
                 'pivot'     => true, // on create&update, do you need to add/delete pivot table entries?
             ],
+            [    // Select2Multiple = n-n relationship (with pivot table)
+                'label'     => "Producers",
+                'type'      => ($show ? "select": 'select2_multiple'),
+                'name'      => 'producers', // the method that defines the relationship in your Model
+// optional
+                'entity'    => 'producers', // the method that defines the relationship in your Model
+                'model'     => "App\Models\Producer", // foreign key model
+                'attribute' => 'type', // foreign key attribute that is shown to user
+                'pivot'     => true, // on create&update, do you need to add/delete pivot table entries?
+            ],
             [
                 'label' => "Movie Image",
                 'name' => "image",

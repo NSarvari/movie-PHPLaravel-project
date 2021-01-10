@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\ProducerController;
+use App\Http\Controllers\MovieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,8 +20,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/search',[MovieController::class,'search'])->name('search');
+Route::get('/movies',[MovieController::class,'getall']);
+Route::get('movies/{id}', [MovieController::class,'getById']);
+
 Route::get('/genres',[GenreController::class,'getall']);
 Route::get('genres/{id}', [GenreController::class,'getById']);
 
 Route::get('/producers',[ProducerController::class,'getall']);
 Route::get('producers/{id}', [ProducerController::class,'getById']);
+

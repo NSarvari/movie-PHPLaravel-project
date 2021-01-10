@@ -3,10 +3,12 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Home</title>
+
+        <title>Laravel</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
         <!-- Styles -->
         <style>
@@ -15,59 +17,28 @@
 
         <style>
             body {
-                background-image: url('background.jpg');
                 font-family: 'Nunito';
             }
-            .button {
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-
-.button1 {
-  background-color: white; 
-  color: black; 
-  border: 2px solid #adaf4c;
-}
-
-.button1:hover {
-  background-color: #adaf4c;
-  color: white;
-}
-.container { 
-  height: 200px;
-  position: relative;
-  border: 3px solid #adaf4c; 
-}
-
-.center {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
         </style>
     </head>
-    <body>
-        <h1 style="text-align: center;color:blue">Welcome!</h1>
-        <div class="container">
-            <h3 style="text-align: center;color:rgb(0, 183, 255)">Click the buttons for seeing information about best movies their producers and genres:</h3>
-            <div class="center">
-                <a href="{{ url('movies') }}"><button type="button" class="button button1">Movies</button></a>
-                <a href="{{ url('genres') }}"><button type="button" class="button button1">Genres</button></a>
-                <a href="{{ url('producers') }}"><button type="button" class="button button1">Producers</button></a>
-            </div>
+    <body class="d-flex justify-content-center">
+        <div class="w-50 pt-3">
+            <table class="table  table-striped table-primary align-middle">
+                <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Release Year</th>
+                    <th scope="col">Language</th>
+                    <th scope="col">Movie Image</th>
+                    <th scope="col">View More</th>
+                </tr>
+                </thead>
+                <tbody>
+                    @include('layouts.partials.movies.all-movies')
+                </tbody>
+            </table>
+            <a class="btn btn-secondary" href="{{ url('/')}}" > Home</a>
         </div>
-        <img src=".\Images\movie.png" alt="movie" width="500" height="600">
     </body>
 </html>

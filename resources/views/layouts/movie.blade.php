@@ -10,7 +10,6 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-
 	</head>
 	<body class="subpage">
 
@@ -38,10 +37,16 @@
 			the background image.
 		-->
 			<section id="post" class="wrapper bg-img" data-bg="popcorn.jpg">
-				<form action="{{ route('search') }}" method="GET">
-					<input type="text" name="search" required/>
-					<button type="submit">Search</button>
+				<form id="inputname" action="{{ route('search') }}" method="GET">
+					<input type="text" name="search" placeholder="Enter name of the movie..." required/>
+					<button type="submit">Search By Name</button>
 				</form>
+				<form id="inputyear" action="{{ route('searchDate') }}" method="GET">
+					<input type="text" name="searchDate" placeholder="Enter release year of the movie..." required/>
+					<button type="submit">Search By Date</button>
+				</form>
+				{{-- <button onclick="showName()">Search</button>
+				<button onclick="showYear()">Search</button> --}}
 				<div class="inner">
 					<article class="box">
 						<header>
@@ -97,6 +102,15 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
+			{{-- <script>
+			function showName(){
+				document.getElementById("inputname").style.display = "block";
+				document.getElementById("inputyear").style.display = "none";
+			}
+			function showYear(){
+				document.getElementById("inputname").style.display = "none";
+				document.getElementById("inputyear").style.display = "block";
+			}
+			</script> --}}
 	</body>
 </html>

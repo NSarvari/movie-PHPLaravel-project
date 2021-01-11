@@ -22,21 +22,21 @@ class MovieController extends BaseController
             ->get();
 
         // Return the search view with the resluts compacted
-        return view('layouts/partials/movies/search', compact('movies'));
+        return view('layouts/movie', compact('movies'));
     }
 
-    // public function searchByDate(Request $request){
-    //     // Get the search value from the request
-    //     $search = $request->input('search');
+    public function searchByDate(Request $request){
+        // Get the search value from the request
+        $search = $request->input('searchDate');
 
-    //     // Search in the title and body columns from the posts table
-    //     $performances = Performance::query()
-    //         ->where('date', 'LIKE', "%{$search}%")
-    //         ->get();
+        // Search in the title and body columns from the posts table
+        $movies = Movie::query()
+            ->where('releaseYear', 'LIKE', "%{$search}%")
+            ->get();
 
-    //     // Return the search view with the resluts compacted
-    //     return view('layouts/partials/performances/search', compact('performances'));
-    // }
+        // Return the search view with the resluts compacted
+        return view('layouts/movie', compact('movies'));
+    }
 
     public function getall()
     {

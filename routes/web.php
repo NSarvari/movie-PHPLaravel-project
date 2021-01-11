@@ -21,6 +21,8 @@ Route::get('/', function () {
 });
 
 Route::get('/search',[MovieController::class,'search'])->name('search');
+Route::get('/searchDate',[MovieController::class,'searchByDate'])->name('searchDate');
+
 Route::get('/movies',[MovieController::class,'getall']);
 Route::get('movies/{id}', [MovieController::class,'getById']);
 

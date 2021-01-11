@@ -29,4 +29,3 @@ Route::get('genres/{id}', [GenreController::class,'getById']);
 
 Route::get('/producers',[ProducerController::class,'getall']);
 Route::get('producers/{id}', [ProducerController::class,'getById']);
-
